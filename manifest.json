@@ -2,7 +2,7 @@
   "name": "Dólar Venezuela",
   "short_name": "DólarVE",
   "start_url": "/index.html",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#632ec7",
   "theme_color": "#007bff",
   "icons": [
