@@ -3,7 +3,7 @@
   "short_name": "DólarVE",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#632ec7",
   "theme_color": "#007bff",
   "icons": [
     {
@@ -16,5 +16,18 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "lang": "es",
+  "id": "con.christar.dolarve",
+  "description": "Esta aplicación te permite consultar valores del dólar actual desde cualquier lugar.",
+  "dir": "auto",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "display_override": [
+    "fullscreen",
+    "standalone",
+    "minimal-ui",
+    "window-controls-overlay",
+    "browser"
   ]
 }
