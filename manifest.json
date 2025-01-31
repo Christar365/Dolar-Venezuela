@@ -3,7 +3,7 @@
   "short_name": "DólarVE",
   "start_url": "index.html",
   "display": "fullscreen",
-  "background_color": "#632ec7",
+  "background_color": "#FFFFFF",
   "theme_color": "#007bff",
   "icons": [
     {
