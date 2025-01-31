@@ -23,11 +23,4 @@
   "dir": "auto",
   "scope": "/",
   "orientation": "portrait-primary",
-  "display_override": [
-    "fullscreen",
-    "standalone",
-    "minimal-ui",
-    "window-controls-overlay",
-    "browser"
-  ]
 }
