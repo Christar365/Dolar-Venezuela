@@ -1,0 +1,51 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dólar Venezuela</title>
+      <link rel="stylesheet" href="assets/styles.css">
+      <link rel="manifest" href="manifest.json">
+    </head>
+    <body>
+      <h1>Dólar Venezuela</h1>
+      <div class="container">
+        <div class="row">
+          <div class="title">BCV</div>
+          <div class="value" id="bcv">0</div>
+        </div>
+        <div class="row">
+          <div class="title">Promedio</div>
+          <div class="value" id="promedio">0</div>
+        </div>
+        <div class="row">
+          <div class="title">Paralelo</div>
+          <div class="value" id="paralelo">0</div>
+        </div>
+
+        <div class="update">
+          Última Actualización: <span id="fecha">8:29PM 30/01/25</span>
+        </div>
+
+        <button onclick="actualizarValores()">Actualizar</button>
+
+        <div class="credits">
+          <p>Desarrollado por Cristian Ramírez | Datos: <a href="https://ve.dolarapi.com/v1/dolares" target="_blank">DólarAPI</a></p>
+        </div>
+      </div>
+      <script src="assets/app.js"></script>
+      <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js')
+            .then(function(registration) {
+              console.log('Service Worker registrado con éxito:', registration.scope);
+            })
+            .catch(function(error) {
+              console.log('Error al registrar el Service Worker:', error);
+            });
+        } else {
+          console.log('Service Workers no son compatibles con este navegador.');
+        }
+      </script>
+    </body>
+    </html>
