@@ -1,51 +1,69 @@
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Dólar Venezuela</title>
-      <link rel="stylesheet" href="assets/styles.css">
-      <link rel="manifest" href="manifest.json">
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dólar Venezuela</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <!-- Pantalla Menú -->
+  <div id="pantalla-menu" class="pantalla">
+    <header>
       <h1>Dólar Venezuela</h1>
-      <div class="container">
-        <div class="row">
-          <div class="title">BCV</div>
-          <div class="value" id="bcv">0</div>
-        </div>
-        <div class="row">
-          <div class="title">Promedio</div>
-          <div class="value" id="promedio">0</div>
-        </div>
-        <div class="row">
-          <div class="title">Paralelo</div>
-          <div class="value" id="paralelo">0</div>
-        </div>
+    </header>
+    <main>
+      <button id="btn-consultar">Consultar</button>
+    </main>
+    <footer>
+      <p>Desarrollado por Cristian Ramírez</p>
+      <p>Datos proporcionados por <a href="https://ve.dolarapi.com/v1/dolares" target="_blank">DólarAPI</a></p>
+    </footer>
+  </div>
 
-        <div class="update">
-          Última Actualización: <span id="fecha">8:29PM 30/01/25</span>
+  <!-- Pantalla Valores -->
+  <div id="pantalla-valores" class="pantalla" style="display: none;">
+    <header>
+      <h1>Dólar Venezuela</h1>
+    </header>
+    <main>
+      <!-- Aquí mostraremos los valores -->
+      <div class="valores">
+        <div>
+          <span class="titulo">BCV:</span>
+          <span id="bcv" class="valor">-</span>
         </div>
-
-        <button onclick="actualizarValores()">Actualizar</button>
-
-        <div class="credits">
-          <p>Desarrollado por Cristian Ramírez | Datos: <a href="https://ve.dolarapi.com/v1/dolares" target="_blank">DólarAPI</a></p>
+        <div>
+          <span class="titulo">Paralelo:</span>
+          <span id="paralelo" class="valor">-</span>
+        </div>
+        <div>
+          <span class="titulo">Promedio:</span>
+          <span id="promedio" class="valor">-</span>
+        </div>
+        <div>
+          <span class="titulo">Última Actualización:</span>
+          <span id="fecha" class="valor">-</span>
         </div>
       </div>
-      <script src="assets/app.js"></script>
-      <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').then(registration => {
-        console.log('Service Worker registrado con éxito:', registration);
-      }).catch(error => {
-        console.log('Error al registrar el Service Worker:', error);
-      });
-    });
-  } else {
-    console.log('Service Workers no son compatibles con este navegador.');
-  }
-</script>
-    </body>
-    </html>
+      <button id="btn-actualizar">Actualizar</button>
+      <button id="btn-volver">Volver</button>
+    </main>
+  </div>
+
+  <script src="assets/app.js"></script>
+  <script>
+    // Registro del Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(function(registration) {
+          console.log('Service Worker registrado con éxito:', registration.scope);
+        })
+        .catch(function(err) {
+          console.log('Error al registrar el Service Worker:', err);
+        });
+    }
+  </script>
+</body>
+</html>
